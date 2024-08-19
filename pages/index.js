@@ -4,10 +4,12 @@ import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
 import { useIsomorphicLayoutEffect } from "../utils";
+import { buildHref } from "../utils/image-url";
 import { stagger } from "../animations";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 import Head from "next/head";
+import Image from "next/image";
 
 // Local Data
 import data from "../data/portfolio.json";
@@ -61,10 +63,12 @@ export default function Home() {
             className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 h-48 mob:h-auto"
             style={{ height: "600px" }}
           >
-            <img
+            <Image
               alt={literals.posterAltText}
               className="h-full w-full object-cover hover:scale-110 transition-all ease-out duration-300"
-              src="/images/Conil-C2AE-ad.jpg"
+              layout="fill"
+              src={buildHref("Conil-C2AE-ad.jpg")}
+              priority
             />
           </div>
         </div>

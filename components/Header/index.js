@@ -1,10 +1,12 @@
 import { Popover } from "@headlessui/react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Button from "../Button";
 import data from "../../data/portfolio.json";
 import literals from "../../data/literals.json";
+import { buildHref } from "../../utils/image-url";
 
 const Header = ({ handleScroll }) => {
   const router = useRouter();
@@ -26,10 +28,12 @@ const Header = ({ handleScroll }) => {
         <Button
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
-          <img
+          <Image
             className="h-6"
-            src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-          ></img>
+            height={24}
+            width={24}
+            src={buildHref(theme === "dark" ? "moon.svg" : "sun.svg")}
+          />
         </Button>
       )}
     </div>;
