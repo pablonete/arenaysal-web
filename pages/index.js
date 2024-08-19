@@ -10,15 +10,13 @@ import Head from "next/head";
 
 // Local Data
 import data from "../data/portfolio.json";
+import literals from "../data/literals.json";
 
 export default function Home() {
   // Ref
   const workRef = useRef();
   const aboutRef = useRef();
-  const textOne = useRef();
-  const textTwo = useRef();
-  const textThree = useRef();
-  const textFour = useRef();
+  const headerTaglines = [useRef(), useRef(), useRef()];
 
   // Handling Scroll
   const handleWorkScroll = () => {
@@ -39,7 +37,7 @@ export default function Home() {
 
   useIsomorphicLayoutEffect(() => {
     stagger(
-      [textOne.current, textTwo.current, textThree.current, textFour.current],
+      headerTaglines.map(ref => ref.current),
       { y: 40, x: -10, transform: "scale(0.95) skew(10deg)" },
       { y: 0, x: 0, transform: "scale(1)" }
     );
@@ -48,7 +46,7 @@ export default function Home() {
   return (
     <div className={`relative`}>
       <Head>
-        <title>{data.name}</title>
+        <title>{literals.name}</title>
       </Head>
 
       <div className="gradient-circle"></div>
@@ -61,30 +59,13 @@ export default function Home() {
         />
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
+          {literals.headerTaglines.map((tagline, index) => (
             <h1
-              ref={textOne}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
+              ref={headerTaglines[index]}
+              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 w-full laptop:w-4/5"
             >
-              {data.headerTaglineOne}
-            </h1>
-            <h1
-              ref={textTwo}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineTwo}
-            </h1>
-            <h1
-              ref={textThree}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineThree}
-            </h1>
-            <h1
-              ref={textFour}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineFour}
-            </h1>
+              {tagline}
+            </h1>))}
           </div>
 
           <Socials className="mt-2 laptop:mt-5" />
