@@ -13,23 +13,12 @@ import data from "../data/portfolio.json";
 import literals from "../data/literals.json";
 
 export default function Home() {
-  // Ref
-  const workRef = useRef();
-  const aboutRef = useRef();
+  const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
   const headerTaglines = [useRef(), useRef(), useRef()];
 
-  // Handling Scroll
-  const handleWorkScroll = () => {
+  const handleScrollToSection = (sectionIndex) => {
     window.scrollTo({
-      top: workRef.current.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
-
-  const handleAboutScroll = () => {
-    window.scrollTo({
-      top: aboutRef.current.offsetTop,
+      top: sectionRefs[sectionIndex].current.offsetTop,
       left: 0,
       behavior: "smooth",
     });
@@ -53,10 +42,7 @@ export default function Home() {
       <div className="gradient-circle-bottom"></div>
 
       <div className="container mx-auto mb-10">
-        <Header
-          handleWorkScroll={handleWorkScroll}
-          handleAboutScroll={handleAboutScroll}
-        />
+        <Header handleScroll={handleScrollToSection} />
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
           {literals.headerTaglines.map((tagline, index) => (
@@ -72,8 +58,15 @@ export default function Home() {
 
           <img src="/images/Conil-C2AE-ad.jpg" />
         </div>
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <h1 className="text-2xl text-bold">{literals.heading.location}</h1>
+        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={sectionRefs[0]}>
+          <h1 className="tablet:m-10 text-2xl text-bold">{literals.sectionTitles[0]}</h1>
+          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
+            {literals.locationText}
+          </p>
+        </div>
+
+        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={sectionRefs[1]}>
+          <h1 className="tablet:m-10 text-2xl text-bold">{literals.sectionTitles[1]}</h1>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
@@ -88,8 +81,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <h1 className="tablet:m-10 text-2xl text-bold">Services.</h1>
+        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={sectionRefs[2]}>
+          <h1 className="tablet:m-10 text-2xl text-bold">{literals.sectionTitles[2]}</h1>
           <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
               <ServiceCard
@@ -100,10 +93,13 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
-          <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
+
+        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={sectionRefs[3]}>
+          <h1 className="tablet:m-10 text-2xl text-bold">{literals.sectionTitles[3]}</h1>
           <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
-            {data.aboutpara}
+            <div className="mt-10">
+              <Socials />
+            </div>
           </p>
         </div>
         <Footer />

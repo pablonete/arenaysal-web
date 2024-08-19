@@ -6,17 +6,34 @@ import Button from "../Button";
 import data from "../../data/portfolio.json";
 import literals from "../../data/literals.json";
 
-const Header = ({ handleWorkScroll, handleAboutScroll }) => {
+const Header = ({ handleScroll }) => {
   const router = useRouter();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  const { name } = literals;
+  const { name, sectionTitles } = literals;
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  const MenuOptions = ({isPopover}) =>
+    <div className={isPopover ? "grid grid-cols-1" : "flex"}>
+      {sectionTitles.map((title, index) => (
+        <Button onClick={() => handleScroll(index)}>{title}</Button>
+      ))}
+      {!isPopover && mounted && theme && data.darkMode && (
+        <Button
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        >
+          <img
+            className="h-6"
+            src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
+          ></img>
+        </Button>
+      )}
+    </div>;
+  
   return (
     <>
       <Popover className="block tablet:hidden mt-5">
@@ -67,16 +84,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll }) => {
                 theme === "dark" ? "bg-slate-800" : "bg-white"
               } shadow-md rounded-md`}
             >
-              <div className="grid grid-cols-1">
-                <Button onClick={handleWorkScroll}>Work</Button>
-                <Button onClick={handleAboutScroll}>About</Button>
-
-                <Button
-                  onClick={() => window.open("mailto:hello@chetanverma.com")}
-                >
-                  Contact
-                </Button>
-              </div>
+              <MenuOptions isPopover />
             </Popover.Panel>
           </>
         )}
@@ -92,24 +100,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll }) => {
         >
           {name}
         </h1>
-          <div className="flex">
-            <Button onClick={handleWorkScroll}>Work</Button>
-            <Button onClick={handleAboutScroll}>About</Button>
-
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
-              Contact
-            </Button>
-            {mounted && theme && data.darkMode && (
-              <Button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              >
-                <img
-                  className="h-6"
-                  src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                ></img>
-              </Button>
-            )}
-          </div>
+          <MenuOptions />
       </div>
     </>
   );
