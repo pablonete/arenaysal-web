@@ -56,7 +56,16 @@ export default function Home() {
 
           <Socials className="mt-2 laptop:mt-5" />
 
-          <img src="/images/Conil-C2AE-ad.jpg" />
+          <div
+            className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 h-48 mob:h-auto"
+            style={{ height: "600px" }}
+          >
+            <img
+              alt={literals.posterAltText}
+              className="h-full w-full object-cover hover:scale-110 transition-all ease-out duration-300"
+              src="/images/Conil-C2AE-ad.jpg"
+            />
+          </div>
         </div>
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={sectionRefs[0]}>
           <h1 className="tablet:m-10 text-2xl text-bold">{literals.sectionTitles[0]}</h1>
