@@ -18,7 +18,7 @@ export default function Home() {
 
   const handleScrollToSection = (sectionIndex) => {
     window.scrollTo({
-      top: sectionRefs[sectionIndex].current.offsetTop,
+      top: sectionRefs[sectionIndex].current.offsetTop - 30,
       left: 0,
       behavior: "smooth",
     });
