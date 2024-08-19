@@ -1,4 +1,11 @@
 {
-    "name" : "Apartamento arenaysal",
-    "headerTaglines": ["Apartamento","arenaysal", "en Conil"]
+  "name": "Apartamento arenaysal",
+  "headerTaglines": [
+    "Apartamento",
+    "arenaysal",
+    "en Conil"
+  ],
+  "heading": {
+    "location": "Ubicación"
+  }
 }
