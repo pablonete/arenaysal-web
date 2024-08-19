@@ -7,9 +7,6 @@ import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
 import Footer from "../components/Footer";
 import Head from "next/head";
-import Button from "../components/Button";
-import Link from "next/link";
-import Cursor from "../components/Cursor";
 
 // Local Data
 import data from "../data/portfolio.json";
@@ -49,8 +46,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`relative ${data.showCursor && "cursor-none"}`}>
-      {data.showCursor && <Cursor />}
+    <div className={`relative`}>
       <Head>
         <title>{data.name}</title>
       </Head>
