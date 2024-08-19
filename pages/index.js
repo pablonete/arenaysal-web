@@ -6,6 +6,7 @@ import WorkCard from "../components/WorkCard";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
 import Footer from "../components/Footer";
+import Button from "../components/Button";
 import Head from "next/head";
 
 // Local Data
@@ -69,9 +70,14 @@ export default function Home() {
         </div>
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={sectionRefs[0]}>
           <h1 className="tablet:m-10 text-2xl text-bold">{literals.sectionTitles[0]}</h1>
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
+          <p className="tablet:m-10 mt-2 text-xl w-full laptop:w-3/5">
             {literals.locationText}
           </p>
+          <div className="tablet:m-10 mt-2">
+            <Button onClick={() => window.open(data.mapUrl)}>
+              {literals.locationMapTitle}
+            </Button>
+          </div>
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={sectionRefs[1]}>
