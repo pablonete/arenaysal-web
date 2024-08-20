@@ -29,6 +29,7 @@ const Header = ({ handleScroll }) => {
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
           <Image
+            alt="Toggle dark mode"
             className="h-6"
             height={24}
             width={24}
@@ -59,6 +60,7 @@ const Header = ({ handleScroll }) => {
                     }
                   >
                     <Image
+                      alt="Toggle dark mode"
                       className="h-6"
                       width={24}
                       height={24}
@@ -69,6 +71,7 @@ const Header = ({ handleScroll }) => {
 
                 <Popover.Button className="flex p-1 m-1">
                   <Image
+                    alt="Open menu"
                     className="h-5"
                     width={24}
                     height={24}
