@@ -38,7 +38,7 @@
     },
     {
       "title": "Cocina",
-      "description": "Independiente, con nevera grande, lavadora, vitrocerámica",
+      "description": "Cocina independiente, completamente equipada",
       "imageSrc": "photos/cocina.jpg"
     },
     {
@@ -53,7 +53,7 @@
     },
     {
       "title": "Baño",
-      "description": "Con bañera y bidé",
+      "description": "Completo baño con bañera",
       "imageSrc": "photos/bano.jpg"
     }
   ]
