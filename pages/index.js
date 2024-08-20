@@ -85,7 +85,7 @@ export default function Home() {
             {literals.locationText}
           </p>
           <div className="tablet:m-10 mt-2 flex">
-            <Button onClick={() => window.open(data.mapUrl)}>
+            <Button onClick={() => window.open(data.map.locationUrl)}>
               <Image
                 alt="Ver mapa"
                 className="mr-2"
@@ -97,7 +97,7 @@ export default function Home() {
             </Button>
             <Button
               className="flex"
-              onClick={() => window.open(data.mapDirUrl)}
+              onClick={() => window.open(data.map.directionsUrl)}
             >
               <Image
                 alt="Ver direcciones"
