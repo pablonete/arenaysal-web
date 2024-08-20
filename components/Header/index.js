@@ -13,7 +13,7 @@ const Header = ({ handleScroll }) => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  const { name, sectionTitles } = literals;
+  const { topTitle, sectionTitles } = literals;
 
   useEffect(() => {
     setMounted(true);
@@ -48,9 +48,9 @@ const Header = ({ handleScroll }) => {
             <div className="flex items-center justify-between p-2 laptop:p-0">
               <h1
                 onClick={() => router.push("/")}
-                className="font-medium p-2 laptop:p-0 link"
+                className="brand-title font-medium p-2 laptop:p-0 link"
               >
-                {name}
+                {topTitle}
               </h1>
 
               <div className="flex items-center">
@@ -102,9 +102,9 @@ const Header = ({ handleScroll }) => {
       >
         <h1
           onClick={() => router.push("/")}
-          className="font-medium cursor-pointer mob:p-2 laptop:p-0"
+          className="brand-title text-xl cursor-pointer mob:p-2 laptop:p-0"
         >
-          {name}
+          {topTitle}
         </h1>
         <MenuOptions />
       </div>

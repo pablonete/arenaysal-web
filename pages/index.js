@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <div className={`relative`}>
       <Head>
-        <title>{literals.name}</title>
+        <title>{literals.pageTitle}</title>
         <link rel="icon" href="/arenaysal-web/favicon.ico" sizes="any" />
       </Head>
 
@@ -47,20 +47,20 @@ export default function Home() {
 
       <div className="container mx-auto mb-10">
         <Header handleScroll={handleScrollToSection} />
-        <div className="laptop:mt-20 mt-10">
-          <div className="mt-5">
+        <div className="mt-10">
+          <div className="mx-10">
             {literals.headerTaglines.map((tagline, index) => (
               <h1
                 key={index}
                 ref={headerTaglines[index]}
-                className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 w-full laptop:w-4/5"
+                className="brand-title-font text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 w-full laptop:w-4/5"
               >
                 {tagline}
               </h1>
             ))}
-          </div>
 
-          <Socials className="mt-2 laptop:mt-5" />
+            <Socials className="mt-2 laptop:mt-5" />
+          </div>
 
           <div
             className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 h-48 mob:h-auto"
