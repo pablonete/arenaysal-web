@@ -2,5 +2,15 @@ import React from "react";
 import Image from "next/image";
 
 export function PopImage(props) {
-    return <Image {...props}/>
+  const [open, setOpen] = React.useState(false);
+  return <>
+    <button onClick={() => setOpen(true)}>
+      <Image className="object-cover hover:scale-110 transition-all ease-out duration-300" layout="fill" {...props} />
+    </button>
+    {open && (
+      <button className="fixed top-0 left-0 z-2 h-full w-full bg-black/75" onClick={() => setOpen(false)}>
+        <Image className="object-contain p-2" layout="fill" {...props} />
+      </button>
+    )}
+  </>;
 }

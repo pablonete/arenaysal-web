@@ -66,8 +66,6 @@ export default function Home() {
           >
             <PopImage
               alt={literals.posterAltText}
-              className="h-full w-full object-cover hover:scale-110 transition-all ease-out duration-300"
-              layout="fill"
               src={buildHref("Conil-C2AE-ad.jpg")}
               priority
             />
@@ -95,7 +93,6 @@ export default function Home() {
                 img={project.imageSrc}
                 name={project.title}
                 description={project.description}
-                onClick={() => window.open(project.url)}
               />
             ))}
           </div>
