@@ -24,7 +24,7 @@ const Header = ({ handleScroll }) => {
       {sectionTitles.map((title, index) => (
         <Button key={index} onClick={() => handleScroll(index)}>{title}</Button>
       ))}
-      {!isPopover && mounted && theme && data.darkMode && (
+      {!isPopover && mounted && theme && (
         <Button
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
@@ -53,21 +53,19 @@ const Header = ({ handleScroll }) => {
               </h1>
 
               <div className="flex items-center">
-                {data.darkMode && (
-                  <Button
-                    onClick={() =>
-                      setTheme(theme === "dark" ? "light" : "dark")
-                    }
-                  >
-                    <Image
-                      alt="Toggle dark mode"
-                      className="h-6"
-                      width={24}
-                      height={24}
-                      src={buildHref(theme === "dark" ? "moon.svg" : "sun.svg")}
-                    />
-                  </Button>
-                )}
+                <Button
+                  onClick={() =>
+                    setTheme(theme === "dark" ? "light" : "dark")
+                  }
+                >
+                  <Image
+                    alt="Toggle dark mode"
+                    className="h-6"
+                    width={24}
+                    height={24}
+                    src={buildHref(theme === "dark" ? "moon.svg" : "sun.svg")}
+                  />
+                </Button>
 
                 <Popover.Button className="flex p-1 m-1">
                   <Image
