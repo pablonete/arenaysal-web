@@ -58,19 +58,21 @@ const Header = ({ handleScroll }) => {
                       setTheme(theme === "dark" ? "light" : "dark")
                     }
                   >
-                    <img
+                    <Image
                       className="h-6"
-                      src={`/images/${
-                        theme === "dark" ? "moon.svg" : "sun.svg"
-                      }`}
-                    ></img>
+                      width={24}
+                      height={24}
+                      src={buildHref(theme === "dark" ? "moon.svg" : "sun.svg")}
+                    />
                   </Button>
                 )}
 
-                <Popover.Button>
-                  <img
+                <Popover.Button className="flex p-1 m-1">
+                  <Image
                     className="h-5"
-                    src={`/images/${
+                    width={24}
+                    height={24}
+                    src={buildHref(
                       !open
                         ? theme === "dark"
                           ? "menu-white.svg"
@@ -78,8 +80,8 @@ const Header = ({ handleScroll }) => {
                         : theme === "light"
                         ? "cancel.svg"
                         : "cancel-white.svg"
-                    }`}
-                  ></img>
+                    )}
+                  />
                 </Popover.Button>
               </div>
             </div>
