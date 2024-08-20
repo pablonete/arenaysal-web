@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { clsx } from "clsx";
 import Image from "next/image";
 import Header from "../components/Header";
-import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
 import { useIsomorphicLayoutEffect } from "../utils";
@@ -64,7 +63,7 @@ export default function Home() {
               </h1>
             ))}
 
-            <Socials className="mt-2 laptop:mt-5" />
+            <Socials className="mt-2 mb-10 laptop:mt-5" />
           </div>
 
           <div

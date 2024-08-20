@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Button from "../Button";
-import data from "../../data/portfolio.json";
 import literals from "../../data/literals.json";
 import { buildHref } from "../../utils/image-url";
 
@@ -102,7 +101,7 @@ const Header = ({ handleScroll }) => {
       >
         <h1
           onClick={() => router.push("/")}
-          className="brand-title text-xl cursor-pointer mob:p-2 laptop:p-0"
+          className="brand-title text-xl cursor-pointer mob:p-2 laptop:p-0 ml-10"
         >
           {topTitle}
         </h1>
