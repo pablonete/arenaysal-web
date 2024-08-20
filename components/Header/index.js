@@ -22,7 +22,7 @@ const Header = ({ handleScroll }) => {
   const MenuOptions = ({isPopover}) =>
     <div className={isPopover ? "grid grid-cols-1" : "flex"}>
       {sectionTitles.map((title, index) => (
-        <Button onClick={() => handleScroll(index)}>{title}</Button>
+        <Button key={index} onClick={() => handleScroll(index)}>{title}</Button>
       ))}
       {!isPopover && mounted && theme && data.darkMode && (
         <Button
