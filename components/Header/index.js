@@ -85,7 +85,7 @@ const Header = ({ handleScroll }) => {
               </div>
             </div>
             <Popover.Panel
-              className={`absolute right-0 z-1 w-11/12 p-4 ${
+              className={`absolute right-0 z-10 w-11/12 p-4 ${
                 theme === "dark" ? "bg-slate-800" : "bg-white"
               } shadow-md rounded-md`}
             >
@@ -97,7 +97,7 @@ const Header = ({ handleScroll }) => {
       <div
         className={`mt-10 hidden flex-row items-center justify-between sticky ${
           theme === "light" && "bg-white"
-        } dark:text-white top-0 z-1 tablet:flex`}
+        } dark:text-white top-0 z-10 tablet:flex`}
       >
         <h1
           onClick={() => router.push("/")}
