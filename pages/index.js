@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { clsx } from "clsx";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
@@ -53,7 +54,10 @@ export default function Home() {
               <h1
                 key={index}
                 ref={headerTaglines[index]}
-                className="brand-title-font text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 w-full laptop:w-4/5"
+                className={clsx(
+                  index === 1 ? "brand-title" : "brand-title-font",
+                  "text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 w-full laptop:w-4/5"
+                )}
               >
                 {tagline}
               </h1>
