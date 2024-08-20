@@ -29,7 +29,7 @@ export default function Home() {
 
   useIsomorphicLayoutEffect(() => {
     stagger(
-      headerTaglines.map(ref => ref.current),
+      headerTaglines.map((ref) => ref.current),
       { y: 40, x: -10, transform: "scale(0.95) skew(10deg)" },
       { y: 0, x: 0, transform: "scale(1)" }
     );
@@ -49,14 +49,15 @@ export default function Home() {
         <Header handleScroll={handleScrollToSection} />
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
-          {literals.headerTaglines.map((tagline, index) => (
-            <h1
-              key={index}
-              ref={headerTaglines[index]}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 w-full laptop:w-4/5"
-            >
-              {tagline}
-            </h1>))}
+            {literals.headerTaglines.map((tagline, index) => (
+              <h1
+                key={index}
+                ref={headerTaglines[index]}
+                className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 w-full laptop:w-4/5"
+              >
+                {tagline}
+              </h1>
+            ))}
           </div>
 
           <Socials className="mt-2 laptop:mt-5" />
@@ -73,7 +74,9 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={sectionRefs[0]}>
-          <h1 className="tablet:m-10 text-2xl text-bold">{literals.sectionTitles[0]}</h1>
+          <h1 className="tablet:m-10 text-2xl text-bold">
+            {literals.sectionTitles[0]}
+          </h1>
           <p className="tablet:m-10 mt-2 text-xl w-full laptop:w-3/5">
             {literals.locationText}
           </p>
@@ -85,7 +88,9 @@ export default function Home() {
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={sectionRefs[1]}>
-          <h1 className="tablet:m-10 text-2xl text-bold">{literals.sectionTitles[1]}</h1>
+          <h1 className="tablet:m-10 text-2xl text-bold">
+            {literals.sectionTitles[1]}
+          </h1>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
@@ -100,7 +105,9 @@ export default function Home() {
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={sectionRefs[2]}>
-          <h1 className="tablet:m-10 text-2xl text-bold">{literals.sectionTitles[2]}</h1>
+          <h1 className="tablet:m-10 text-2xl text-bold">
+            {literals.sectionTitles[2]}
+          </h1>
           <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
               <ServiceCard
@@ -113,7 +120,9 @@ export default function Home() {
         </div>
 
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={sectionRefs[3]}>
-          <h1 className="tablet:m-10 text-2xl text-bold">{literals.sectionTitles[3]}</h1>
+          <h1 className="tablet:m-10 text-2xl text-bold">
+            {literals.sectionTitles[3]}
+          </h1>
           <div className="ml-10">
             <Socials />
           </div>

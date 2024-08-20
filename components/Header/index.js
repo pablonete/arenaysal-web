@@ -19,15 +19,15 @@ const Header = ({ handleScroll }) => {
     setMounted(true);
   }, []);
 
-  const MenuOptions = ({isPopover}) =>
+  const MenuOptions = ({ isPopover }) => (
     <div className={isPopover ? "grid grid-cols-1" : "flex"}>
       {sectionTitles.map((title, index) => (
-        <Button key={index} onClick={() => handleScroll(index)}>{title}</Button>
+        <Button key={index} onClick={() => handleScroll(index)}>
+          {title}
+        </Button>
       ))}
       {!isPopover && mounted && theme && (
-        <Button
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        >
+        <Button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
           <Image
             alt="Toggle dark mode"
             className="h-6"
@@ -37,8 +37,9 @@ const Header = ({ handleScroll }) => {
           />
         </Button>
       )}
-    </div>;
-  
+    </div>
+  );
+
   return (
     <>
       <Popover className="block tablet:hidden mt-5">
@@ -54,9 +55,7 @@ const Header = ({ handleScroll }) => {
 
               <div className="flex items-center">
                 <Button
-                  onClick={() =>
-                    setTheme(theme === "dark" ? "light" : "dark")
-                  }
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 >
                   <Image
                     alt="Toggle dark mode"
@@ -79,8 +78,8 @@ const Header = ({ handleScroll }) => {
                           ? "menu-white.svg"
                           : "menu.svg"
                         : theme === "light"
-                        ? "cancel.svg"
-                        : "cancel-white.svg"
+                          ? "cancel.svg"
+                          : "cancel-white.svg"
                     )}
                   />
                 </Popover.Button>
@@ -107,7 +106,7 @@ const Header = ({ handleScroll }) => {
         >
           {name}
         </h1>
-          <MenuOptions />
+        <MenuOptions />
       </div>
     </>
   );
