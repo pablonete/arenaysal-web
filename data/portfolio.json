@@ -2,12 +2,14 @@
   "mapUrl": "https://maps.app.goo.gl/SPusrroPFTeKkQebA",
   "socials": [
     {
-      "id": "1",
+      "title": "WhatsApp",
+      "link": "whatsapp://send?phone=34626043500"
+    },
+    {
       "title": "Twitter",
       "link": "https://x.com/pablonete/status/1822347170432848110"
     },
     {
-      "id": "2",
       "title": "Email",
       "link": "mailto:arenaysalconil@gmail.com"
     }
