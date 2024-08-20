@@ -77,7 +77,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={sectionRefs[0]}>
+        <div className="mt-10 p-2 laptop:p-0" ref={sectionRefs[0]}>
           <h1 className="tablet:m-10 text-2xl text-bold">
             {literals.sectionTitles[0]}
           </h1>
@@ -111,7 +111,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={sectionRefs[1]}>
+        <div className="mt-10 p-2 laptop:p-0" ref={sectionRefs[1]}>
           <h1 className="tablet:m-10 text-2xl text-bold">
             {literals.sectionTitles[1]}
           </h1>
@@ -128,7 +128,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={sectionRefs[2]}>
+        <div className="mt-10 p-2 laptop:p-0" ref={sectionRefs[2]}>
           <h1 className="tablet:m-10 text-2xl text-bold">
             {literals.sectionTitles[2]}
           </h1>
