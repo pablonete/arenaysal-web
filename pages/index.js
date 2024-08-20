@@ -8,8 +8,8 @@ import { buildHref } from "../utils/image-url";
 import { stagger } from "../animations";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
+import { PopImage } from "../components/PopImage";
 import Head from "next/head";
-import Image from "next/image";
 
 // Local Data
 import data from "../data/portfolio.json";
@@ -64,7 +64,7 @@ export default function Home() {
             className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 h-48 mob:h-auto"
             style={{ height: "600px" }}
           >
-            <Image
+            <PopImage
               alt={literals.posterAltText}
               className="h-full w-full object-cover hover:scale-110 transition-all ease-out duration-300"
               layout="fill"
