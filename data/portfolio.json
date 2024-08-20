@@ -16,46 +16,39 @@
   ],
   "projects": [
     {
-      "id": "1",
-      "title": "Project One Test",
-      "description": "Web Design",
-      "imageSrc": "sun.svg",
-      "url": "http://chetanverma.com/"
+      "title": "Salón",
+      "description": "Mesa de comedor y sofá con TV",
+      "imageSrc": "photos/salon.jpg"
     },
     {
-      "id": "2",
-      "title": "Project Two",
-      "description": "Web Development",
-      "imageSrc": "sun.svg",
-      "url": "http://chetanverma.com/"
+      "title": "Terraza",
+      "description": "Pequeña terraza con espacio para dos",
+      "imageSrc": "photos/terraza.jpg"
     },
     {
-      "id": "3",
-      "title": "Project Three",
-      "description": "Design",
-      "imageSrc": "sun.svg",
-      "url": "http://chetanverma.com/"
+      "title": "Entrada",
+      "description": "Zona muy tranquila",
+      "imageSrc": "photos/exterior.jpg"
     },
     {
-      "id": "4",
-      "title": "Project Four",
-      "description": "Marketing",
-      "imageSrc": "sun.svg",
-      "url": "http://chetanverma.com/"
+      "title": "Cocina",
+      "description": "Independiente, con nevera grande, lavadora, vitrocerámica",
+      "imageSrc": "photos/cocina.jpg"
     },
     {
-      "id": "5",
-      "title": "Project Five",
-      "description": "Development",
-      "imageSrc": "sun.svg",
-      "url": "http://chetanverma.com/"
+      "title": "Dormitorio 1",
+      "description": "Cama doble y armario de 3 puertas",
+      "imageSrc": "photos/dormitorio1.jpg"
     },
     {
-      "id": "6",
-      "title": "Project Six",
-      "description": "Design & Development",
-      "imageSrc": "sun.svg",
-      "url": "http://chetanverma.com/"
+      "title": "Dormitorio 2",
+      "description": "Con dos camas individuales y armario de 4 puertas",
+      "imageSrc": "photos/dormitorio2.jpg"
+    },
+    {
+      "title": "Baño",
+      "description": "Con bañera y bidé",
+      "imageSrc": "photos/bano.jpg"
     }
   ],
   "services": [
