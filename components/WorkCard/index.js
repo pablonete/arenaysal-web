@@ -13,7 +13,6 @@ const WorkCard = ({ img, name, description, onClick }) => {
       >
         <PopImage
           alt={name}
-          className="h-full w-full object-cover hover:scale-110 transition-all ease-out duration-300"
           layout="fill"
           src={buildHref(img)}
         />
