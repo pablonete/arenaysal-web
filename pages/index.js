@@ -39,6 +39,7 @@ export default function Home() {
     <div className={`relative`}>
       <Head>
         <title>{literals.name}</title>
+        <link rel="icon" href="/arenaysal-web/favicon.ico" sizes="any" />
       </Head>
 
       <div className="gradient-circle"></div>
