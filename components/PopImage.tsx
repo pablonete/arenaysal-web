@@ -16,7 +16,7 @@ export function PopImage(props) {
       {open &&
         createPortal(
           <button
-            className="fixed top-0 left-0 h-full w-full bg-black/75"
+            className="fixed top-0 left-0 z-10 h-full w-full bg-black/75"
             onClick={() => setOpen(false)}
           >
             <Image className="object-contain p-2" layout="fill" {...props} />
