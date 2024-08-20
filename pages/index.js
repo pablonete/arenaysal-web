@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { clsx } from "clsx";
+import Image from "next/image";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
@@ -84,9 +85,29 @@ export default function Home() {
           <p className="tablet:m-10 mt-2 text-xl w-full laptop:w-3/5">
             {literals.locationText}
           </p>
-          <div className="tablet:m-10 mt-2">
+          <div className="tablet:m-10 mt-2 flex">
             <Button onClick={() => window.open(data.mapUrl)}>
+              <Image
+                alt="Ver mapa"
+                className="mr-2"
+                width={24}
+                height={24}
+                src={buildHref("map-icon.svg")}
+              />
               {literals.locationMapTitle}
+            </Button>
+            <Button
+              className="flex"
+              onClick={() => window.open(data.mapDirUrl)}
+            >
+              <Image
+                alt="Ver direcciones"
+                className="mr-2"
+                width={24}
+                height={24}
+                src={buildHref("map-direction.svg")}
+              />
+              {literals.locationMapDirectionsTitle}
             </Button>
           </div>
         </div>

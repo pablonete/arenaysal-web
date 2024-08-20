@@ -1,17 +1,23 @@
 {
-  "mapUrl": "https://maps.app.goo.gl/SPusrroPFTeKkQebA",
+  "map": {
+    "mapUrl": "https://maps.app.goo.gl/SPusrroPFTeKkQebA",
+    "directionsUrl": "https://www.google.com/maps/dir//36.2744812,-6.0903687"
+  },
   "socials": [
     {
       "title": "WhatsApp",
-      "link": "whatsapp://send?phone=34626043500"
+      "link": "whatsapp://send?phone=34626043500",
+      "imageSrc": "whatsapp.svg"
     },
     {
       "title": "Twitter",
-      "link": "https://x.com/pablonete/status/1822347170432848110"
+      "link": "https://x.com/pablonete/status/1822347170432848110",
+      "imageSrc": "twitter.svg"
     },
     {
       "title": "Email",
-      "link": "mailto:arenaysalconil@gmail.com"
+      "link": "mailto:arenaysalconil@gmail.com",
+      "imageSrc": "email.svg"
     }
   ],
   "projects": [
