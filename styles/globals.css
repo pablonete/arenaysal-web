@@ -24,7 +24,7 @@ body {
 }
 
 .gradient-circle {
-  position: fixed;
+  position: absolute;
   pointer-events: none;
   z-index: 100;
   top: -30px;
