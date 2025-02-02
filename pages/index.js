@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { clsx } from "clsx";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 import Header from "../components/Header";
 import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
@@ -17,6 +18,7 @@ import data from "../data/portfolio.json";
 import literals from "../data/literals.json";
 
 export default function Home() {
+  const { theme } = useTheme();
   const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
   const headerTaglines = [useRef(), useRef(), useRef()];
 
@@ -35,6 +37,8 @@ export default function Home() {
       { y: 0, x: 0, transform: "scale(1)" }
     );
   }, []);
+
+  const images = getImageNames(theme === "dark");
 
   return (
     <div className={`relative`}>
@@ -91,7 +95,7 @@ export default function Home() {
                 className="mr-2"
                 width={24}
                 height={24}
-                src={buildHref("map-icon.svg")}
+                src={buildHref(images.map)}
               />
               {literals.locationMapTitle}
             </Button>
@@ -104,7 +108,7 @@ export default function Home() {
                 className="mr-2"
                 width={24}
                 height={24}
-                src={buildHref("map-direction.svg")}
+                src={buildHref(images.direction)}
               />
               {literals.locationMapDirectionsTitle}
             </Button>
@@ -140,4 +144,11 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+function getImageNames(isDark) {
+  return {
+    map: isDark ? "map-icon-white.svg" : "map-icon.svg",
+    direction: isDark ? "map-direction-white.svg" : "map-direction.svg",
+  }
 }
