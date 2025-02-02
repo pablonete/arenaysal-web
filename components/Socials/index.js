@@ -1,4 +1,5 @@
 import React from "react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Button from "../Button";
 import { buildHref } from "../../utils/image-url";
