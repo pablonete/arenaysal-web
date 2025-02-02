@@ -6,10 +6,12 @@ import { buildHref } from "../../utils/image-url";
 import data from "../../data/portfolio.json";
 
 const Socials = ({ className }) => {
+  const { theme } = useTheme();
+
   return (
     <div className={`${className} flex flex-wrap mob:flex-nowrap link`}>
       {data.socials.map((social, index) => {
-        const iconSrc = isDark && social.darkIconSrc || social.iconSrc;
+        const iconSrc = theme === "dark" && social.darkIconSrc || social.iconSrc;
         return <Button key={index} onClick={() => window.open(social.link)}>
           {iconSrc && (
             <Image
