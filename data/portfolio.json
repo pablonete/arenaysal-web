@@ -7,17 +7,18 @@
     {
       "title": "WhatsApp",
       "link": "whatsapp://send?phone=34626043500",
-      "imageSrc": "whatsapp.svg"
+      "iconSrc": "whatsapp.svg"
     },
     {
       "title": "Twitter",
       "link": "https://x.com/pablonete/status/1822347170432848110",
-      "imageSrc": "twitter.svg"
+      "iconSrc": "twitter.svg"
     },
     {
       "title": "Email",
       "link": "mailto:arenaysalconil@gmail.com",
-      "imageSrc": "email.svg"
+      "iconSrc": "email.svg",
+      "darkIconSrc": "email.svg"
     }
   ],
   "projects": [

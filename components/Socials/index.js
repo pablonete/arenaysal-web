@@ -8,20 +8,21 @@ import data from "../../data/portfolio.json";
 const Socials = ({ className }) => {
   return (
     <div className={`${className} flex flex-wrap mob:flex-nowrap link`}>
-      {data.socials.map((social, index) => (
-        <Button key={index} onClick={() => window.open(social.link)}>
-          {social.imageSrc && (
+      {data.socials.map((social, index) => {
+        const iconSrc = isDark && social.darkIconSrc || social.iconSrc;
+        return <Button key={index} onClick={() => window.open(social.link)}>
+          {iconSrc && (
             <Image
               alt="Social icon"
               width={24}
               height={24}
-              src={buildHref(social.imageSrc)}
+              src={buildHref(iconSrc)}
               className="mr-2"
             />
           )}
           {social.title}
         </Button>
-      ))}
+      })}
     </div>
   );
 };
