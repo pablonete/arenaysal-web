@@ -90,7 +90,7 @@ const Header = ({ handleScroll }) => {
       </Popover>
       <div
         className={`mt-10 hidden flex-row items-center justify-between sticky ${
-          theme === "light" && "bg-white"
+          theme === "dark" ? "bg-black" : "bg-white"
         } dark:text-white top-0 z-10 tablet:flex`}
       >
         <h1
