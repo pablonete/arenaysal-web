@@ -18,6 +18,8 @@ const Header = ({ handleScroll }) => {
     setMounted(true);
   }, []);
 
+  const images = getImageNames(theme === "dark");
+
   const MenuOptions = ({ isPopover }) => (
     <div className={isPopover ? "grid grid-cols-1" : "flex"}>
       {sectionTitles.map((title, index) => (
@@ -32,7 +34,7 @@ const Header = ({ handleScroll }) => {
             className="h-6"
             height={24}
             width={24}
-            src={buildHref(theme === "dark" ? "moon.svg" : "sun.svg")}
+            src={buildHref(images.darkMode)}
           />
         </Button>
       )}
@@ -61,7 +63,7 @@ const Header = ({ handleScroll }) => {
                     className="h-6"
                     width={24}
                     height={24}
-                    src={buildHref(theme === "dark" ? "moon.svg" : "sun.svg")}
+                    src={buildHref(images.darkMode)}
                   />
                 </Button>
 
@@ -71,15 +73,7 @@ const Header = ({ handleScroll }) => {
                     className="h-5"
                     width={24}
                     height={24}
-                    src={buildHref(
-                      !open
-                        ? theme === "dark"
-                          ? "menu-white.svg"
-                          : "menu.svg"
-                        : theme === "light"
-                          ? "cancel.svg"
-                          : "cancel-white.svg"
-                    )}
+                    src={buildHref(!open ? images.menu : images.cancel)}
                   />
                 </Popover.Button>
               </div>
@@ -110,5 +104,13 @@ const Header = ({ handleScroll }) => {
     </>
   );
 };
+
+function getImageNames(isDark) {
+  return {
+    menu: isDark ? "menu-white.svg" : "menu.svg",
+    cancel: isDark ? "cancel-white.svg" : "cancel.svg",
+    darkMode: isDark ? "moon.svg" : "sun.svg",
+  }
+}
 
 export default Header;
