@@ -2,7 +2,13 @@ import React from "react";
 import { PopImage } from "../PopImage";
 import { buildHref } from "../../utils/image-url";
 
-const WorkCard = ({ img, name, description, onClick }) => {
+interface Props {
+  img: string;
+  name: string;
+  description: string;
+}
+
+const WorkCard = ({ img, name, description }: Props) => {
   return (
     <div className="overflow-hidden rounded-lg p-2 laptop:p-4 first:ml-0">
       <div

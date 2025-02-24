@@ -19,8 +19,17 @@ import literals from "../data/literals.json";
 
 export default function Home() {
   const { theme } = useTheme();
-  const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
-  const headerTaglines = [useRef(), useRef(), useRef()];
+  const sectionRefs = [
+    useRef<HTMLDivElement>(undefined),
+    useRef<HTMLDivElement>(undefined),
+    useRef<HTMLDivElement>(undefined),
+    useRef<HTMLDivElement>(undefined),
+  ];
+  const headerTaglines = [
+    useRef<HTMLHeadingElement>(undefined),
+    useRef<HTMLHeadingElement>(undefined),
+    useRef<HTMLHeadingElement>(undefined),
+  ];
 
   const handleScrollToSection = (sectionIndex) => {
     window.scrollTo({
@@ -99,10 +108,7 @@ export default function Home() {
               />
               {literals.locationMapTitle}
             </Button>
-            <Button
-              className="flex"
-              onClick={() => window.open(data.map.directionsUrl)}
-            >
+            <Button onClick={() => window.open(data.map.directionsUrl)}>
               <Image
                 alt="Ver direcciones"
                 className="mr-2"
@@ -123,7 +129,7 @@ export default function Home() {
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
               <WorkCard
-                key={project.id}
+                key={project.title}
                 img={project.imageSrc}
                 name={project.title}
                 description={project.description}
@@ -150,5 +156,5 @@ function getImageNames(isDark) {
   return {
     map: isDark ? "map-icon-white.svg" : "map-icon.svg",
     direction: isDark ? "map-direction-white.svg" : "map-direction.svg",
-  }
+  };
 }

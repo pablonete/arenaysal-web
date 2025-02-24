@@ -5,6 +5,7 @@ Web page del apartamento Arenaysal en Conil.
 - Clone this repo
 - run `yarn`
 - `yarn dev`
+- Navigate to http://127.0.0.1:3000/arenaysal-web
 
 ### How To Deploy
 
@@ -18,7 +19,8 @@ Merge changes to main, GH pages is setup to autodeploy
 - after login select the forked repo or the repo you want to deploy
 - after selecting netlify will automatially deploy your website.
 
-### Tech Stack Used - 
+### Tech Stack Used -
+
 - Next.js
 - TailwindCSS
 
@@ -27,9 +29,3 @@ Merge changes to main, GH pages is setup to autodeploy
 Shout-out @chetanverma16!
 
 [!["Buy Him A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/chetanverma)
-
-
-
-
-
-

@@ -20,7 +20,7 @@ const Header = ({ handleScroll }) => {
 
   const images = getImageNames(theme === "dark");
 
-  const MenuOptions = ({ isPopover }) => (
+  const MenuOptions = ({ isPopover }: { isPopover?: boolean }) => (
     <div className={isPopover ? "grid grid-cols-1" : "flex"}>
       {sectionTitles.map((title, index) => (
         <Button key={index} onClick={() => handleScroll(index)}>
@@ -110,7 +110,7 @@ function getImageNames(isDark) {
     menu: isDark ? "menu-white.svg" : "menu.svg",
     cancel: isDark ? "cancel-white.svg" : "cancel.svg",
     darkMode: isDark ? "moon.svg" : "sun.svg",
-  }
+  };
 }
 
 export default Header;

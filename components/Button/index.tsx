@@ -1,8 +1,14 @@
 import React from "react";
 import { useTheme } from "next-themes";
-import data from "../../data/portfolio.json";
 
-const Button = ({ children, type, onClick, classes }) => {
+type ButtonProps = {
+  children: React.ReactNode;
+  type?: "primary" | "secondary";
+  onClick: () => void;
+  classes?: string;
+};
+
+const Button = ({ children, type, onClick, classes }: ButtonProps) => {
   const { theme } = useTheme();
   if (type === "primary") {
     return (
