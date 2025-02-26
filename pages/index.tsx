@@ -10,7 +10,7 @@ import { buildHref } from "../utils/image-url";
 import { stagger } from "../animations";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
-import { PopImage } from "../components/PopImage";
+import { PopImage, PopImageProvider } from "../components/PopImage";
 import Head from "next/head";
 
 // Local Data
@@ -50,105 +50,103 @@ export default function Home() {
   const images = getImageNames(theme === "dark");
 
   return (
-    <div className={`relative`}>
-      <Head>
-        <title>{literals.pageTitle}</title>
-        <link rel="icon" href="/arenaysal-web/favicon.ico" sizes="any" />
-      </Head>
+    <PopImageProvider images={data.projects.map((project) => project.imageSrc)}>
+      <div className={`relative`}>
+        <Head>
+          <title>{literals.pageTitle}</title>
+          <link rel="icon" href="/arenaysal-web/favicon.ico" sizes="any" />
+        </Head>
 
-      <div className="gradient-circle"></div>
-      <div className="gradient-circle-bottom"></div>
+        <div className="gradient-circle"></div>
+        <div className="gradient-circle-bottom"></div>
 
-      <div className="container mx-auto mb-10">
-        <Header handleScroll={handleScrollToSection} />
-        <div className="mt-10">
-          <div className="mx-10">
-            {literals.headerTaglines.map((tagline, index) => (
-              <h1
-                key={index}
-                ref={headerTaglines[index]}
-                className={clsx(
-                  index === 1 ? "brand-title" : "brand-title-font",
-                  "text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 w-full laptop:w-4/5"
-                )}
-              >
-                {tagline}
-              </h1>
-            ))}
+        <div className="container mx-auto mb-10">
+          <Header handleScroll={handleScrollToSection} />
+          <div className="mt-10">
+            <div className="mx-10">
+              {literals.headerTaglines.map((tagline, index) => (
+                <h1
+                  key={index}
+                  ref={headerTaglines[index]}
+                  className={clsx(
+                    index === 1 ? "brand-title" : "brand-title-font",
+                    "text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 w-full laptop:w-4/5"
+                  )}
+                >
+                  {tagline}
+                </h1>
+              ))}
 
-            <Socials className="mt-2 mb-10 laptop:mt-5" />
+              <Socials className="mt-2 mb-10 laptop:mt-5" />
+            </div>
+
+            <div
+              className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 h-48 mob:h-auto"
+              style={{ height: "600px" }}
+            >
+              <PopImage alt={literals.posterAltText} src="Conil-C2AE-ad.jpg" />
+            </div>
+          </div>
+          <div className="mt-10 p-2 laptop:p-0" ref={sectionRefs[0]}>
+            <h1 className="tablet:m-10 text-2xl text-bold">
+              {literals.sectionTitles[0]}
+            </h1>
+            <p className="tablet:m-10 mt-2 text-xl w-full laptop:w-3/5">
+              {literals.locationText}
+            </p>
+            <div className="tablet:m-10 mt-2 flex">
+              <Button onClick={() => window.open(data.map.locationUrl)}>
+                <Image
+                  alt="Ver mapa"
+                  className="mr-2"
+                  width={24}
+                  height={24}
+                  src={buildHref(images.map)}
+                />
+                {literals.locationMapTitle}
+              </Button>
+              <Button onClick={() => window.open(data.map.directionsUrl)}>
+                <Image
+                  alt="Ver direcciones"
+                  className="mr-2"
+                  width={24}
+                  height={24}
+                  src={buildHref(images.direction)}
+                />
+                {literals.locationMapDirectionsTitle}
+              </Button>
+            </div>
           </div>
 
-          <div
-            className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 h-48 mob:h-auto"
-            style={{ height: "600px" }}
-          >
-            <PopImage
-              alt={literals.posterAltText}
-              src={buildHref("Conil-C2AE-ad.jpg")}
-              priority
-            />
+          <div className="mt-10 p-2 laptop:p-0" ref={sectionRefs[1]}>
+            <h1 className="tablet:m-10 text-2xl text-bold">
+              {literals.sectionTitles[1]}
+            </h1>
+
+            <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
+              {data.projects.map((project) => (
+                <WorkCard
+                  key={project.title}
+                  img={project.imageSrc}
+                  name={project.title}
+                  description={project.description}
+                />
+              ))}
+            </div>
           </div>
+
+          <div className="mt-10 p-2 laptop:p-0" ref={sectionRefs[2]}>
+            <h1 className="tablet:m-10 text-2xl text-bold">
+              {literals.sectionTitles[2]}
+            </h1>
+            <div className="ml-10">
+              <Socials />
+            </div>
+          </div>
+          <Footer />
         </div>
-        <div className="mt-10 p-2 laptop:p-0" ref={sectionRefs[0]}>
-          <h1 className="tablet:m-10 text-2xl text-bold">
-            {literals.sectionTitles[0]}
-          </h1>
-          <p className="tablet:m-10 mt-2 text-xl w-full laptop:w-3/5">
-            {literals.locationText}
-          </p>
-          <div className="tablet:m-10 mt-2 flex">
-            <Button onClick={() => window.open(data.map.locationUrl)}>
-              <Image
-                alt="Ver mapa"
-                className="mr-2"
-                width={24}
-                height={24}
-                src={buildHref(images.map)}
-              />
-              {literals.locationMapTitle}
-            </Button>
-            <Button onClick={() => window.open(data.map.directionsUrl)}>
-              <Image
-                alt="Ver direcciones"
-                className="mr-2"
-                width={24}
-                height={24}
-                src={buildHref(images.direction)}
-              />
-              {literals.locationMapDirectionsTitle}
-            </Button>
-          </div>
-        </div>
-
-        <div className="mt-10 p-2 laptop:p-0" ref={sectionRefs[1]}>
-          <h1 className="tablet:m-10 text-2xl text-bold">
-            {literals.sectionTitles[1]}
-          </h1>
-
-          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
-            {data.projects.map((project) => (
-              <WorkCard
-                key={project.title}
-                img={project.imageSrc}
-                name={project.title}
-                description={project.description}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-10 p-2 laptop:p-0" ref={sectionRefs[2]}>
-          <h1 className="tablet:m-10 text-2xl text-bold">
-            {literals.sectionTitles[2]}
-          </h1>
-          <div className="ml-10">
-            <Socials />
-          </div>
-        </div>
-        <Footer />
       </div>
-    </div>
+    </PopImageProvider>
   );
 }
 

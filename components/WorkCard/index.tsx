@@ -1,6 +1,5 @@
 import React from "react";
 import { PopImage } from "../PopImage";
-import { buildHref } from "../../utils/image-url";
 
 interface Props {
   img: string;
@@ -15,7 +14,7 @@ const WorkCard = ({ img, name, description }: Props) => {
         className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 h-48 mob:h-auto"
         style={{ height: "600px" }}
       >
-        <PopImage alt={name} layout="fill" src={buildHref(img)} />
+        <PopImage alt={name} src={img} />
       </div>
       <h1 className="mt-5 text-3xl font-medium">
         {name ? name : "Project Name"}
