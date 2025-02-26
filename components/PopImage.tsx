@@ -11,7 +11,7 @@ interface PopImageProps {
 export function PopImage(props: PopImageProps) {
   const { show } = React.useContext(PopImageContext);
   return (
-    <button onClick={() => show(props.src)}>
+    <button onClick={() => show(props)}>
       <Image
         className="object-cover hover:scale-110 transition-all ease-out duration-300"
         layout="fill"
@@ -23,16 +23,16 @@ export function PopImage(props: PopImageProps) {
 }
 
 const PopImageContext = React.createContext<{
-  show(imageUrl: string): void;
+  show(image: PopImageProps): void;
 }>(undefined);
 
 interface PopImageProviderProps extends React.PropsWithChildren {
-  images: string[];
+  images: PopImageProps[];
 }
 
 export function PopImageProvider({ children, images }: PopImageProviderProps) {
-  const [currentImage, show] = React.useState("");
-  const index = images.indexOf(currentImage);
+  const [currentImage, show] = React.useState<PopImageProps>(undefined);
+  // TODO const index = images.findIndex((image) => image.src === currentImage.src);
 
   return (
     <PopImageContext.Provider value={{ show }}>
@@ -41,13 +41,13 @@ export function PopImageProvider({ children, images }: PopImageProviderProps) {
         createPortal(
           <button
             className="fixed top-0 left-0 z-10 h-full w-full bg-black/75"
-            onClick={() => show("")}
+            onClick={() => show(undefined)}
           >
             <Image
               className="object-contain p-2"
               layout="fill"
-              src={buildHref(currentImage)}
-              alt={`TODO ${index + 1} of ${images.length}`}
+              src={buildHref(currentImage.src)}
+              alt={currentImage.alt}
             />
           </button>,
           document.body
