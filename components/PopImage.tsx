@@ -39,17 +39,21 @@ export function PopImageProvider({ children, images }: PopImageProviderProps) {
       {children}
       {currentImage &&
         createPortal(
-          <button
-            className="fixed top-0 left-0 z-10 h-full w-full bg-black/75"
-            onClick={() => show(undefined)}
-          >
+          <div className="fixed top-0 left-0 z-10 h-full w-full bg-black/75">
             <Image
-              className="object-contain p-2"
+              className="object-contain p-2 pointer-events-none"
               layout="fill"
               src={buildHref(currentImage.src)}
               alt={currentImage.alt}
             />
-          </button>,
+            <button
+              className="fixed right-0 m-4 bg-white hover:bg-gray-100 rounded-lg px-4 py-2"
+              aria-label="Cerrar"
+              onClick={() => show(undefined)}
+            >
+              x
+            </button>
+          </div>,
           document.body
         )}
     </PopImageContext.Provider>
