@@ -50,7 +50,12 @@ export default function Home() {
   const images = getImageNames(theme === "dark");
 
   return (
-    <PopImageProvider images={data.projects.map((project) => project.imageSrc)}>
+    <PopImageProvider
+      images={data.projects.map((project) => ({
+        src: project.imageSrc,
+        alt: project.title,
+      }))}
+    >
       <div className={`relative`}>
         <Head>
           <title>{literals.pageTitle}</title>
