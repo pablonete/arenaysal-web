@@ -25,37 +25,37 @@
     {
       "title": "Salón",
       "description": "Mesa de comedor y sofá con TV",
-      "imageSrc": "photos/salon.jpg"
-    },
-    {
-      "title": "Terraza",
-      "description": "Pequeña terraza con espacio para dos",
-      "imageSrc": "photos/terraza.jpg"
-    },
-    {
-      "title": "Entrada",
-      "description": "Zona muy tranquila",
-      "imageSrc": "photos/exterior.jpg"
-    },
-    {
-      "title": "Cocina",
-      "description": "Cocina independiente, completamente equipada",
-      "imageSrc": "photos/cocina.jpg"
+      "imagesSrc": ["photos/salon.jpg", "photos/salon.1.jpg", "photos/salon.2.jpg", "photos/salon.3.jpg"]
     },
     {
       "title": "Dormitorio 1",
       "description": "Cama doble y armario de 3 puertas",
-      "imageSrc": "photos/dormitorio1.jpg"
+      "imagesSrc": ["photos/dormitorio1.jpg", "photos/dormitorio1.1.jpg", "photos/dormitorio1.2.jpg"]
     },
     {
       "title": "Dormitorio 2",
       "description": "Con dos camas individuales y armario de 4 puertas",
-      "imageSrc": "photos/dormitorio2.jpg"
+      "imagesSrc": ["photos/dormitorio2.jpg", "photos/dormitorio2.1.jpg", "photos/dormitorio2.2.jpg"]
+    },
+    {
+      "title": "Terraza",
+      "description": "Pequeña terraza con espacio para dos",
+      "imagesSrc": ["photos/terraza.jpg"]
+    },
+    {
+      "title": "Cocina",
+      "description": "Cocina independiente, completamente equipada",
+      "imagesSrc": ["photos/cocina.jpg", "photos/cocina.1.jpg"]
     },
     {
       "title": "Baño",
       "description": "Completo baño con bañera",
-      "imageSrc": "photos/bano.jpg"
+      "imagesSrc": ["photos/bano.jpg", "photos/bano.1.jpg"]
+    },
+    {
+      "title": "Entrada",
+      "description": "Zona muy tranquila",
+      "imagesSrc": ["photos/exterior.jpg"]
     }
   ]
 }
