@@ -2,6 +2,7 @@ import React from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { buildHref } from "../utils/image-url";
+import ImageGallery from "react-image-gallery";
 
 interface PopImageProps {
   src: string;
@@ -36,41 +37,28 @@ export function PopImageProvider({ children, images }: PopImageProviderProps) {
     ? images.findIndex((image) => image.src === currentImage.src)
     : -1;
 
+  const galleryImages = images.map((image) => ({
+    original: buildHref(image.src),
+  }));
+
   return (
     <PopImageContext.Provider value={{ show }}>
       {children}
       {currentImage &&
         createPortal(
           <div className="fixed top-0 left-0 z-10 h-full w-full bg-black/75">
-            <Image
-              className="object-contain p-2 pointer-events-none"
-              layout="fill"
-              src={buildHref(currentImage.src)}
-              alt={currentImage.alt}
+            <ImageGallery
+              items={galleryImages}
+              onClick={() => show(undefined)}
+              showBullets
+              showIndex
+              showThumbnails={false}
+              startIndex={index}
             />
-            <div className="fixed right-0 top-0 m-4">
-              <IconButton aria-label="Cerrar" onClick={() => show(undefined)}>
-                x
-              </IconButton>
-            </div>
-            {index >= 0 && (
-              <div className="fixed right-0 bottom-0 m-4 flex gap-2">
-                <IconButton
-                  aria-label="Anterior"
-                  disabled={index <= 0}
-                  onClick={() => show(images[index - 1])}
-                >
-                  &lt;
-                </IconButton>
-                <IconButton
-                  aria-label="Siguiente"
-                  disabled={index >= images.length - 1}
-                  onClick={() => show(images[index + 1])}
-                >
-                  &gt;
-                </IconButton>
-              </div>
-            )}
+            <button
+              className="w-full h-full"
+              onClick={() => show(undefined)}
+            ></button>
           </div>,
           document.body
         )}
