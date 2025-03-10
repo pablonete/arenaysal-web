@@ -51,10 +51,10 @@ export default function Home() {
 
   return (
     <PopImageProvider
-      images={data.projects.map((project) => ({
-        src: project.imageSrc,
+      images={data.projects.map((project) => project.imagesSrc.map(src => ({
+        src: src,
         alt: project.title,
-      }))}
+      }))).flat()}
     >
       <div className={`relative`}>
         <Head>
@@ -132,7 +132,7 @@ export default function Home() {
               {data.projects.map((project) => (
                 <WorkCard
                   key={project.title}
-                  img={project.imageSrc}
+                  img={project.imagesSrc[0]}
                   name={project.title}
                   description={project.description}
                 />
