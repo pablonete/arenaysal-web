@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Head from "next/head";
 import { buildHref } from "../utils/image-url";
 
@@ -57,7 +58,18 @@ export default function Welcome() {
       />
 
       <h2 className="brand-title-font text-2xl mt-10">¿Necesitas algo?</h2>
-      <p className="mt-4 text-lg">Mi whatsapp es el 626043500</p>
+
+      <p className="mt-4 text-lg">
+        Mi WhatsApp es el
+        <img
+          alt="Whatsapp icon"
+          src={buildHref("whatsapp.svg")}
+          width={24}
+          height={24}
+          className="inline-block mx-2"
+        />
+        626043500
+      </p>
       <p className="mt-4 text-lg">-Patricia</p>
     </div>
   );
