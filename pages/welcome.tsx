@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { buildHref } from "../utils/image-url";
 
 export default function Welcome() {
   return (
@@ -49,7 +50,13 @@ export default function Welcome() {
       </p>
 
       <h2 className="brand-title-font text-2xl mt-10">Wifi</h2>
-      <p className="mt-4 text-lg">TODO</p>
+      <div className="mt-4 text-center">
+        <img
+          src={buildHref("wifi-qr-74B0.png")}
+          alt="WiFi QR Code"
+          className="mx-auto mt-2"
+        />
+      </div>
 
       <h2 className="brand-title-font text-2xl mt-10">¿Necesitas algo?</h2>
       <p className="mt-4 text-lg">Mi whatsapp es el 626043500</p>
