@@ -28,7 +28,7 @@ export default function Welcome() {
           className="mx-2 underline text-blue-500"
           href="https://maps.app.goo.gl/ts5JQ7dr7MZwkFny5"
         >
-          <img
+          <Image
             alt="Google Maps icon"
             src={buildHref("map-icon.svg")}
             width={24}
@@ -74,7 +74,7 @@ export default function Welcome() {
 
       <p className="mt-4 text-lg">
         Mi WhatsApp es el
-        <img
+        <Image
           alt="Whatsapp icon"
           src={buildHref("whatsapp.svg")}
           width={24}
