@@ -24,6 +24,19 @@ export default function Welcome() {
         Si llegas en coche, la mejor forma de acceder es desde el Paseo
         Marítimo, por la calle Huerto, encontrarás una zona de carga/descarga
         que es el mejor sitio para descargar las maletas.
+        <a
+          className="mx-2 underline text-blue-500"
+          href="https://maps.app.goo.gl/ts5JQ7dr7MZwkFny5"
+        >
+          <img
+            alt="Google Maps icon"
+            src={buildHref("map-icon.svg")}
+            width={24}
+            height={24}
+            className="inline-block mx-2"
+          />
+          Google Maps
+        </a>
       </p>
       <p className="mt-4 text-lg">
         Al portal se accede por el callejón peatonal que hay entre el
