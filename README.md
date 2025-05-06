@@ -5,7 +5,7 @@ Web page del apartamento Arenaysal en Conil.
 - Clone this repo
 - run `yarn`
 - `yarn dev`
-- Navigate to http://127.0.0.1:3000/arenaysal-web
+- Navigate to http://127.0.0.1:3000
 
 ### How To Deploy
 
