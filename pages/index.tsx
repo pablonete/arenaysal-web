@@ -51,15 +51,19 @@ export default function Home() {
 
   return (
     <PopImageProvider
-      images={data.projects.map((project) => project.imagesSrc.map(src => ({
-        src: src,
-        alt: project.title,
-      }))).flat()}
+      images={data.projects
+        .map((project) =>
+          project.imagesSrc.map((src) => ({
+            src: src,
+            alt: project.title,
+          }))
+        )
+        .flat()}
     >
       <div className={`relative`}>
         <Head>
           <title>{literals.pageTitle}</title>
-          <link rel="icon" href="/arenaysal-web/favicon.ico" sizes="any" />
+          <link rel="icon" href="/favicon.ico" sizes="any" />
         </Head>
 
         <div className="gradient-circle"></div>
