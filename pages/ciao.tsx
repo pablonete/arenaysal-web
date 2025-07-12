@@ -30,7 +30,10 @@ export default function Ciao() {
           • Tira la <strong>basura</strong>, hay contenedores en el paseo marítimo.
         </li>
         <li className="text-lg">
-          • Déjalo todo <strong>limpio</strong> y la vajilla tal como la encontraste.
+          • Déjalo todo <strong>ordenado</strong> para que puedan entrar a limpiar mejor.
+        </li>
+        <li className="text-lg">
+          - Deja la vajilla limpia y recogida tal como la encontraste.
         </li>
         <li className="text-lg">
           • No hagas las <strong>camas</strong>, tenemos que lavar las sábanas y toallas.
