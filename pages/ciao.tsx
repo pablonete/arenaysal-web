@@ -33,7 +33,7 @@ export default function Ciao() {
           • Déjalo todo <strong>ordenado</strong> para que puedan entrar a limpiar mejor.
         </li>
         <li className="text-lg">
-          - Deja la vajilla limpia y recogida tal como la encontraste.
+          • Deja la vajilla limpia y recogida tal como la encontraste.
         </li>
         <li className="text-lg">
           • No hagas las <strong>camas</strong>, tenemos que lavar las sábanas y toallas.
