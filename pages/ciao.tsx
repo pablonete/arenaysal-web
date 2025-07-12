@@ -9,9 +9,10 @@ export default function Ciao() {
         <title>arenaysal - Salida</title>
       </Head>
       <h1 className="brand-title-font text-3xl font-bold text-center mt-10">
-        Gracias por alojarte en <span className="brand-title">arenaysal</span>, espero que tu estancia haya sido agradable.
+        Checkout
       </h1>
       <p className="text-center mt-4 text-lg">
+        Gracias por alojarte en <span className="brand-title">arenaysal</span>, espero que tu estancia haya sido agradable.
         A continuación te explicamos los pasos para dejar el apartamento.
       </p>
 
@@ -27,7 +28,7 @@ export default function Ciao() {
       
       <ul className="mt-4 space-y-4">
         <li className="text-lg">
-          • Tira la <strong>basura</strong>, hay contenedores en el paseo marítimo.
+          • No dejes <strong>basura</strong> en el apartamento, hay contenedores en el paseo marítimo.
         </li>
         <li className="text-lg">
           • Déjalo todo <strong>ordenado</strong> para que puedan entrar a limpiar mejor.
