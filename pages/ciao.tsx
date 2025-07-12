@@ -2,7 +2,7 @@ import Image from "next/image";
 import Head from "next/head";
 import { buildHref } from "../utils/image-url";
 
-export default function Welcome() {
+export default function Ciao() {
   return (
     <div className="container mx-auto p-4">
       <Head>
@@ -17,7 +17,7 @@ export default function Welcome() {
 
       <h2 className="brand-title-font text-2xl mt-10">Cuándo</h2>
       <p className="mt-4 text-lg">
-        Tienes que salir del apartamento antes de las 11:00 de la mañana.
+        Tienes que salir del apartamento antes de las <strong>11:00</strong> de la mañana.
       </p>
 
       <h2 className="brand-title-font text-2xl mt-10">Cómo</h2>
@@ -26,12 +26,13 @@ export default function Welcome() {
       </p>
       <p className="mt-4 text-lg">
         <ul>
-          <li>Tira la basura, hay contenedores en el paseo marítimo.</li>
-          <li>Déjalo todo limpio y la vajilla tal como la encontraste.</li>
-          <li>No hagas las camas, tenemos que lavar las sábanas y toallas.</li>
-          <li>Deja todas las ventanas cerradas.</li>
-          <li>Deja las llaves en la mesa del salón.</li>
-          <li>Avísanos cuando salgas.</li>
+          <li>Tira la <strong>basura</strong>, hay contenedores en el paseo marítimo.</li>
+          <li>Déjalo todo <strong>ordenado</strong> para que puedan entrar a limpiar.</li>
+          <li>Deja la <strong>vajilla</strong> limpia y recogida tal como la encontraste.</li>
+          <li>No hagas las camas, tenemos que lavar las <strong>sábanas y toallas</strong>.</li>
+          <li>Deja todas las <strong>ventanas</strong> cerradas.</li>
+          <li>Deja las <strong>llaves</strong> en la mesa del salón.</li>
+          <li></strong>Avísanos</strong> cuando salgas.</li>
           <li>Estamos encantados de recibir cualquier sugerencia o comentario.</li>
         </ul>
       </p>
