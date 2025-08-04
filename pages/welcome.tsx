@@ -55,6 +55,12 @@ export default function Welcome() {
         En la ventana de la cocina hay un cajetín para recoger las llaves con el
         PIN que te hemos proporcionado.
       </p>
+      
+      <p className="mt-4 text-lg text-gray-700">
+        ⚠️ El horno está averiado y al manipular los mandos puede saltar el diferencial en el cuadro de luces. 
+        Se ofrece una plancha redonda para hacer pizzas, que está sobre la encimera junto a la nevera.
+      </p>
+      
       <h2 className="brand-title-font text-2xl mt-10">Donde aparcar</h2>
       <p className="mt-4 text-lg">
         Para aparcar el coche, en el Paseo Marítimo es gratis durante el año
