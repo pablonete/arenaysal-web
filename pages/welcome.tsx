@@ -56,7 +56,7 @@ export default function Welcome() {
         PIN que te hemos proporcionado.
       </p>
       
-      <p className="mt-4 text-lg text-gray-700">
+      <p className="mt-4 text-lg">
         ⚠️ El horno está averiado y al manipular los mandos puede saltar el diferencial en el cuadro de luces. 
         Se ofrece una plancha redonda para hacer pizzas, que está sobre la encimera junto a la nevera.
       </p>
